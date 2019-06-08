@@ -136,6 +136,8 @@ nav h1 a {
   margin: 0;
   padding: 30px 15px 60px;
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
 }
 #restaurants-list li {
   background-color: #fff;
@@ -145,7 +147,7 @@ nav h1 a {
   min-height: 380px;
   padding: 0 30px 25px;
   text-align: left;
-  width: 270px;
+  width: calc(33% - 94px);
 }
 #restaurants-list .restaurant-img {
   background-color: #ccc;
@@ -154,6 +156,8 @@ nav h1 a {
   max-width: 100%;
   min-height: 248px;
   min-width: 100%;
+  object-fit: cover;
+  object-position: center center;
 }
 #restaurants-list li h1 {
   color: #f18200;
@@ -205,7 +209,7 @@ nav h1 a {
 .inside #footer {
   bottom: 0;
   position: absolute;
-  width: 50%;
+  width: calc(50% - 50px);
 }
 #restaurant-name {
   color: #f18200;
@@ -218,7 +222,8 @@ nav h1 a {
   line-height: 1.1;
 }
 #restaurant-img {
-	width: 90%;
+	width: 100%;
+  object-fit: cover;
 }
 #restaurant-address {
   font-size: 12pt;
@@ -234,13 +239,13 @@ nav h1 a {
   padding: 2px 0;
   text-align: center;
   text-transform: uppercase;
-	width: 90%;
+	width: 100%;
 }
 #restaurant-container, #reviews-container {
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
   padding: 140px 40px 30px;
-  width: 50%;
+  width: calc(50% - 80px);
 }
 #reviews-container {
   padding: 30px 40px 80px;
@@ -258,18 +263,72 @@ nav h1 a {
 }
 #reviews-list li {
   background-color: #fff;
-    border: 2px solid #f3f3f3;
+  border: 2px solid #f3f3f3;
   display: block;
   list-style-type: none;
   margin: 0 0 30px;
   overflow: hidden;
-  padding: 0 20px 20px;
+  padding: 20px;
   position: relative;
-  width: 85%;
+  width: calc(100% - 40px);
 }
 #reviews-list li p {
   margin: 0 0 10px;
 }
 #restaurant-hours td {
   color: #666;
+}
+
+@media screen and (max-width: 640px) {
+  .filter-options {
+    height: auto;
+    padding-top: 10px;
+  }
+
+  #restaurants-list li {
+    margin: 15px 0;
+    width: calc(100% - 64px);
+  }
+
+  .inside header, header {
+    width: 100vw;
+    z-index: 2000;
+    position:  fixed;
+  }
+
+  .inside header nav h1, header nav h1 {
+    padding-top: 10px;
+  }
+
+  .inside #map-container {
+    width: 100%;
+    position: static;
+    height: 50vh;
+    margin-top: 80px;
+  }
+
+  #breadcrumb {
+    width: 100%;
+  }
+
+  #restaurant-container, #reviews-container {
+    width: calc(100% - 80px);
+    padding-top: 30px;
+  }
+
+  #restaurant-container h1 {
+    text-align: center;
+  }
+
+  #restaurant-container > p, #restaurant-img {
+    width: 100%;
+  }
+
+  #reviews-list li {
+    width: calc(100% - 40px);
+  }
+
+  #footer, .inside #footer {
+    width: calc(100% - 50px);
+  }
 }
